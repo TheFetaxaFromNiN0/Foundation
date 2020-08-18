@@ -1,10 +1,14 @@
-﻿@using Foundation.Features.CatalogContent.Package
+﻿﻿@using EPiServer.Framework.Web.Resources
+@using Foundation.Features.CatalogContent.Package
 
 @model GenericPackageViewModel
 
 @{
     var shareTitle = Uri.EscapeUriString("Check out this product: " + Model.CurrentContent.DisplayName);
     var shareUrl = Url.Encode(Request.Url.ToString());
+
+    ClientResources.RequireScript("/Assets/js/vendors/dual-listbox.min.js").AtHeader();
+    ClientResources.RequireStyle("/Assets/scss/vendors/dual-listbox.css").AtHeader();
 }
 
 <input type="hidden" name="productCode" id="productCode" value="@Model.Package.Code" />
@@ -25,6 +29,7 @@
             <hr />
             <div class="row">
                 <div class="col-12">
+                    <select class="demo" id="select" multiple> </select>
                     @if (Model.IsAvailable)
                     {
                         if (Model.DiscountedPrice < Model.ListingPrice)
@@ -115,3 +120,37 @@
         </div>
     </div>
 </div>
+
+<script>
+      let dualListbox = new DualListbox("#select", {
+        addEvent: function (value) {
+          // Should use the event listeners
+          console.log(value);
+        },
+        removeEvent: function (value) {
+          // Should use the event listeners
+          console.log(value);
+        },
+        availableTitle: "Different title",
+        selectedTitle: "Different title",
+        addButtonText: ">",
+        removeButtonText: "<",
+        addAllButtonText: ">>",
+        removeAllButtonText: "<<",
+
+        options: [
+          { text: "Option 1", value: "OPTION1" },
+          { text: "Option 2", value: "OPTION2" },
+          { text: "Selected option", value: "OPTION3", selected: true },
+        ],
+      });
+
+      dualListbox.addEventListener("added", function (event) {
+        console.log(event);
+        console.log(event.addedElement);
+      });
+      dualListbox.addEventListener("removed", function (event) {
+        console.log(event);
+        console.log(event.removedElement);
+      });
+</script>

@@ -1605,6 +1605,8 @@
     <Content Include="Assets\imgs\blog-img1.jpg" />
     <Content Include="Assets\imgs\ipadair.png" />
     <Content Include="Assets\imgs\iphone11.png" />
+    <Content Include="Assets\js\vendors\dual-listbox.min.js" />
+    <Content Include="Assets\scss\vendors\dual-listbox.css" />
     <Content Include="Assets\vendors\fa-brands-400.svg" />
     <Content Include="Assets\vendors\fa-regular-400.svg" />
     <Content Include="Assets\vendors\fa-solid-900.svg" />

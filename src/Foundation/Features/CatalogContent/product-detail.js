@@ -1,4 +1,7 @@
-﻿require("jquery-zoom");
+﻿import feather from "feather-icons";
+import Dropdown from "../../Assets/js/common/dropdown";
+import Product from "../../Features/CatalogContent/product";
+require("jquery-zoom");
 
 export default class ProductDetail {
     constructor(divContainerId) {
@@ -20,7 +23,7 @@ export default class ProductDetail {
                     $(inst.divContainerId).find("#productCode").val(productCode);
                     feather.replace();
                     let dropdown = new Dropdown("#quickView");
-                    dropdown.Init();
+                    dropdown.init();
                     let product = new Product('#quickView');
                     product.addToCartClick();
                     product.addToWishlistClick();
@@ -52,7 +55,7 @@ export default class ProductDetail {
                         $(inst.divContainerId).find('.modal-body').off();
                         //$(inst.divContainerId).find("#productCode").val(productCode);
                         let dropdown = new Dropdown(inst.divContainerId);
-                        dropdown.Init();
+                        dropdown.init();
                         let product = new Product(inst.divContainerId);
                         product.addToCartClick();
                         product.addToWishlistClick();
@@ -230,7 +233,7 @@ export default class ProductDetail {
                     $(inst.divContainerId).val(productCode);
                     feather.replace();
                     let dropdown = new Dropdown(inst.divContainerId);
-                    dropdown.Init();
+                    dropdown.init();
                     let product = new Product(inst.divContainerId);
                     product.addToCartClick();
                     product.addToWishlistClick();

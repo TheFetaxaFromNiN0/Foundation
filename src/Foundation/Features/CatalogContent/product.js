@@ -1,4 +1,6 @@
-﻿export default class Product {
+﻿import feather from "feather-icons";
+
+export default class Product {
     constructor(divId) {
         if (divId) {
             this.divContainerId = divId;
