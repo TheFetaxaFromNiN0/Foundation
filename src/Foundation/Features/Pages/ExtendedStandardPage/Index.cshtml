@@ -72,12 +72,18 @@
                     </div>
                 }
                 <div class="row">
-                    <div class="col-6">
-                        @Html.PropertyFor(x => x.CurrentContent.LeftContentArea)
-                    </div>
-                    <div class="col-6">
-                        @Html.PropertyFor(x => x.CurrentContent.RightContentArea)
-                    </div>
+                    @if (Model.CurrentContent.LeftContentArea != null && Model.CurrentContent.LeftContentArea.IsEmpty || PageEditing.PageIsInEditMode)
+                    {
+                        <div class="col-6">
+                            @Html.PropertyFor(x => x.CurrentContent.LeftContentArea)
+                        </div>
+                    }
+                    @if (Model.CurrentContent.RightContentArea != null && Model.CurrentContent.RightContentArea.IsEmpty || PageEditing.PageIsInEditMode)
+                    {
+                        <div class="col-6">
+                            @Html.PropertyFor(x => x.CurrentContent.RightContentArea)
+                        </div>
+                    }
                 </div>
             </div>
             <div class="row">
