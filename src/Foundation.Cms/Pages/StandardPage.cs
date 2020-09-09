@@ -6,6 +6,7 @@ using EPiServer.Web;
 using Foundation.Cms.EditorDescriptors;
 using System.ComponentModel.DataAnnotations;
 using Foundation.Cms.Blocks;
+using Geta.Tags.EditorDescriptors;
 
 namespace Foundation.Cms.Pages
 {
@@ -65,6 +66,12 @@ namespace Foundation.Cms.Pages
         [AllowedTypes(new[] { typeof(AdsBlock) })]
         [Display(Name = "Footer", GroupName = SystemTabNames.Content, Order = 212)]
         public virtual ContentArea FooterAds { get; set; }
+
+        [CultureSpecific]
+        [UIHint("Tags")]
+        [GetaTags(AllowSpaces = true, AllowDuplicates = true, CaseSensitive = false, ReadOnly = false)]
+        [Display(Name = "Tags", GroupName = SystemTabNames.Content, Order = 213)]
+        public virtual string Tags { get; set; }
 
         public override void SetDefaultValues(ContentType contentType)
         {

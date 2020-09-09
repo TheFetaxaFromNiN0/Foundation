@@ -67,6 +67,9 @@
                 }
                 <h1 style="color: @Model.CurrentContent.TitleColor">@Html.PropertyFor(x => x.CurrentContent.Name)</h1>
             </div>
+            <div>
+                @Html.PropertyFor(m => m.CurrentContent.Tags)
+            </div>
             <div class="standard-page__content">
                 @if ((Model.CurrentContent.MainBody != null && !Model.CurrentContent.MainBody.IsEmpty) || PageEditing.PageIsInEditMode)
                 {
