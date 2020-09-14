@@ -1,22 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Shell.ObjectEditing;
 using EPiServer.Web;
-using Foundation.Cms.EditorDescriptors;
-using System.ComponentModel.DataAnnotations;
 using Foundation.Cms.Blocks;
+using Foundation.Cms.EditorDescriptors;
 using Geta.Tags.EditorDescriptors;
 
 namespace Foundation.Cms.Pages
 {
-    [ContentType(DisplayName = "Standard Page",
-        GUID = "c0a25bb7-199c-457d-98c6-b0179c7acae8",
-        Description = "Allows for creation of rich standard pages",
+    [ContentType(DisplayName = "Extended Standard Page",
+        GUID = "e6911472-0769-4092-a53c-7a6241df4dc3",
+        Description = "Allows for creation of rich extended standard pages",
         GroupName = SystemTabNames.Content)]
     [ImageUrl("~/assets/icons/cms/pages/CMS-icon-page-23.png")]
-    public class StandardPage : FoundationPageData
+    public class ExtendedStandardPage : FoundationPageData
     {
+        [CultureSpecific]
+        [Editable(false)]
+        public override ContentArea MainContentArea { get; set; }
+
+        [CultureSpecific]
+        [Display(Name = "Left content area", GroupName = SystemTabNames.Content, Order = 201)]
+        public virtual ContentArea LeftContentArea { get; set; }
+
+        [CultureSpecific]
+        [Display(Name = "Right content area", GroupName = SystemTabNames.Content, Order = 202)]
+        public virtual ContentArea RightContentArea { get; set; }
+
         [CultureSpecific]
         [ClientEditor(ClientEditingClass = "dijit/ColorPalette")]
         [Display(Name = "Title color", GroupName = SystemTabNames.Content, Order = 203)]
@@ -59,7 +76,7 @@ namespace Foundation.Cms.Pages
             set { this.SetPropertyValue(page => page.BackgroundOpacity, value); }
         }
 
-        [AllowedTypes(new[] { typeof(AdsBlock) })]
+        [AllowedTypes(new[] {typeof(AdsBlock)})]
         [Display(Name = "Header", GroupName = SystemTabNames.Content, Order = 211)]
         public virtual ContentArea HeaderAds { get; set; }
 

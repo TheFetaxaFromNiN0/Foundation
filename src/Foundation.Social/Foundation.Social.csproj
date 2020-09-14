@@ -23,6 +23,7 @@
     <PackageReference Include="EPiServer.Social.Groups" Version="1.5.4" />
     <PackageReference Include="EPiServer.Social.Moderation" Version="1.5.4" />
     <PackageReference Include="EPiServer.Social.Ratings" Version="1.5.4" />
+    <PackageReference Include="Geta.Tags" Version="4.0.12" />
     <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3" />
     <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.3" />
   </ItemGroup>

@@ -1,6 +1,4 @@
-﻿@using EPiServer.Web.Mvc.Html
-@model Foundation.Cms.ViewModels.Pages.StandardPageViewModel
-
+﻿@model ExtendedStandardPageViewModel
 @{
     var heroClass = "";
     var boxClass = "";
@@ -22,14 +20,11 @@
 <div class="row">
     <div class="col-12 standard-page__container">
         <div class="standard-page__hero @heroClass">
-            @if (Model.CurrentContent.HeaderAds != null && !Model.CurrentContent.HeaderAds.IsEmpty || PageEditing.PageIsInEditMode)
-            {
-                <div class="row">
-                    <div class="col-12">
-                        @Html.PropertyFor(m => m.CurrentContent.HeaderAds)
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    @Html.PropertyFor(m => m.CurrentContent.HeaderAds)
                 </div>
-            }
+            </div>
             @if (!ContentReference.IsNullOrEmpty(Model.CurrentContent.BackgroundVideo))
             {
                 <video class="standard-page__video @heroClass" autoplay loop playsinline muted>
@@ -79,23 +74,26 @@
                         </div>
                     </div>
                 }
-                @if (Model.CurrentContent.MainContentArea != null && !Model.CurrentContent.MainContentArea.IsEmpty || PageEditing.PageIsInEditMode)
-                {
-                    <div class="row">
-                        <div class="col-12">
-                            @Html.PropertyFor(x => x.CurrentContent.MainContentArea)
-                        </div>
-                    </div>
-                }
-            </div>
-            @if (Model.CurrentContent.FooterAds != null && !Model.CurrentContent.FooterAds.IsEmpty || PageEditing.PageIsInEditMode)
-            {
                 <div class="row">
-                    <div class="col-12">
-                        @Html.PropertyFor(m => m.CurrentContent.FooterAds)
-                    </div>
+                    @if (Model.CurrentContent.LeftContentArea != null && Model.CurrentContent.LeftContentArea.IsEmpty || PageEditing.PageIsInEditMode)
+                    {
+                        <div class="col-6">
+                            @Html.PropertyFor(x => x.CurrentContent.LeftContentArea)
+                        </div>
+                    }
+                    @if (Model.CurrentContent.RightContentArea != null && Model.CurrentContent.RightContentArea.IsEmpty || PageEditing.PageIsInEditMode)
+                    {
+                        <div class="col-6">
+                            @Html.PropertyFor(x => x.CurrentContent.RightContentArea)
+                        </div>
+                    }
                 </div>
-            }
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    @Html.PropertyFor(m => m.CurrentContent.FooterAds)
+                </div>
+            </div>
         </div>
     </div>
 </div>

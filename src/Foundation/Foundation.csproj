@@ -524,6 +524,9 @@
     <Reference Include="Geta.SEO.Sitemaps, Version=3.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Geta.SEO.Sitemaps.3.1.2\lib\net461\Geta.SEO.Sitemaps.dll</HintPath>
     </Reference>
+    <Reference Include="Geta.Tags, Version=4.0.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Geta.Tags.4.0.12\lib\net45\Geta.Tags.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -732,6 +735,12 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="PowerSlice, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PowerSlice.4.0.1\lib\net461\PowerSlice.dll</HintPath>
     </Reference>
@@ -936,6 +945,7 @@
     <Compile Include="Attributes\OnlyAnonymousAttribute.cs" />
     <Compile Include="Features\Api\AuthorizedApiController.cs" />
     <Compile Include="Features\Api\PublicApiController.cs" />
+    <Compile Include="Features\Blocks\AdsBlockController.cs" />
     <Compile Include="Features\Blocks\AssetsDownloadLinksBlockController.cs" />
     <Compile Include="Features\Blocks\BreadcrumbBlockController.cs" />
     <Compile Include="Features\Blocks\CarouselBlockController.cs" />
@@ -947,6 +957,7 @@
     <Compile Include="Features\Blocks\LikeButtonBlockController.cs" />
     <Compile Include="Features\Blocks\MembershipAffiliationBlockController.cs" />
     <Compile Include="Features\Blocks\MembershipDisplayBlockController.cs" />
+    <Compile Include="Features\Blocks\MyBlockController.cs" />
     <Compile Include="Features\Blocks\NavigationBlockController.cs" />
     <Compile Include="Features\Blocks\OrderSearchBlockController.cs" />
     <Compile Include="Features\Blocks\ProductHeroBlockController.cs" />
@@ -957,6 +968,7 @@
     <Compile Include="Features\Blog\BlogItem\BlogItemController.cs" />
     <Compile Include="Features\Blog\BlogListPage\BlogListPageController.cs" />
     <Compile Include="Features\Collection\CollectionPageController.cs" />
+    <Compile Include="Features\Pages\ExtendedStandardPage\ExtendedStandardPageController.cs" />
     <Compile Include="Features\People\PersonListPage\PersonListPageController.cs" />
     <Compile Include="Features\People\PersonItemPage\PersonItemPageController.cs" />
     <Compile Include="Features\Preview\PartialViewDisplayChannel.cs" />
@@ -1350,6 +1362,7 @@
     <Content Include="ClientResources\Scripts\Modules\rgbaColorPicker.js" />
     <Content Include="ClientResources\Styles\Styles.css" />
     <Content Include="ClientResources\Styles\TinyMCE.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Features\Blocks\Views\LikeButtonBlock.cshtml" />
     <Content Include="Features\Blocks\Views\MembershipDisplayBlock.cshtml" />
     <Content Include="Features\Blocks\Views\RatingBlock.cshtml" />
@@ -1972,6 +1985,10 @@
     <Content Include="modules\_protected\episerver-telemetry-ui\episerver-telemetry-ui.zip" />
     <Content Include="modules\_protected\episerver-labs-content-manager\web.config" />
     <Content Include="modules\_protected\episerver-labs-grid-view\web.config" />
+    <Content Include="Features\Blocks\Views\MyBlock.cshtml" />
+    <Content Include="Features\Pages\ExtendedStandardPage\Index.cshtml" />
+    <Content Include="Features\Blocks\Views\AdsBlock.cshtml" />
+    <Content Include="modules\_protected\Geta.Tags\Geta.Tags.zip" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
