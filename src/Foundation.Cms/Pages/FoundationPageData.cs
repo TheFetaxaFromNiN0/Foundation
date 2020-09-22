@@ -11,6 +11,7 @@ using Geta.EpiCategories;
 using Geta.EpiCategories.DataAnnotations;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Geta.Tags.EditorDescriptors;
 
 namespace Foundation.Cms.Pages
 {
@@ -36,6 +37,12 @@ namespace Foundation.Cms.Pages
         [CultureSpecific]
         [Display(Name = "Main content area", GroupName = SystemTabNames.Content, Order = 200)]
         public virtual ContentArea MainContentArea { get; set; }
+
+        [CultureSpecific]
+        [UIHint("Tags")]
+        [GetaTags(AllowSpaces = true, AllowDuplicates = true, CaseSensitive = false, ReadOnly = false)]
+        [Display(Name = "Tags", GroupName = SystemTabNames.Content, Order = 300)]
+        public virtual string Tags { get; set; }
 
         #endregion
 

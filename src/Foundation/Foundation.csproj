@@ -969,6 +969,7 @@
     <Compile Include="Features\Blog\BlogListPage\BlogListPageController.cs" />
     <Compile Include="Features\Collection\CollectionPageController.cs" />
     <Compile Include="Features\Pages\ExtendedStandardPage\ExtendedStandardPageController.cs" />
+    <Compile Include="Features\Pages\SearchPage\SearchPageController.cs" />
     <Compile Include="Features\People\PersonListPage\PersonListPageController.cs" />
     <Compile Include="Features\People\PersonItemPage\PersonItemPageController.cs" />
     <Compile Include="Features\Preview\PartialViewDisplayChannel.cs" />
@@ -1989,6 +1990,7 @@
     <Content Include="Features\Pages\ExtendedStandardPage\Index.cshtml" />
     <Content Include="Features\Blocks\Views\AdsBlock.cshtml" />
     <Content Include="modules\_protected\Geta.Tags\Geta.Tags.zip" />
+    <Content Include="Features\Pages\SearchPage\Index.cshtml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

@@ -29,5 +29,8 @@ namespace Foundation.Cms
 
         [Display(Order = 620)]
         public const string Syndication = "Syndication";
+
+        [Display(Order = 630)]
+        public const string Search = "Search";
     }
 }

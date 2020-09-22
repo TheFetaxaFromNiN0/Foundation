@@ -84,12 +84,6 @@ namespace Foundation.Cms.Pages
         [Display(Name = "Footer", GroupName = SystemTabNames.Content, Order = 212)]
         public virtual ContentArea FooterAds { get; set; }
 
-        [CultureSpecific]
-        [UIHint("Tags")]
-        [GetaTags(AllowSpaces = true, AllowDuplicates = true, CaseSensitive = false, ReadOnly = false)]
-        [Display(Name = "Tags", GroupName = SystemTabNames.Content, Order = 213)]
-        public virtual string Tags { get; set; }
-
         public override void SetDefaultValues(ContentType contentType)
         {
             base.SetDefaultValues(contentType);
